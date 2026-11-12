@@ -9,9 +9,9 @@ export const sample = {
   date: "2027-02-21T13:40:00+09:00",
   cover: photo("cover.jpg"),
   groom: {
-    name: "내현",
+    name: "승구",
     order: "장남",
-    father: "이승구",
+    father: "이내현",
     mother: "", // 미정 — 비어 있으면 혼주 줄에서 생략됨
     phone: "010-0000-0000",
     tag: "#INFP",
