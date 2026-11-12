@@ -14,8 +14,6 @@ export const sample = {
     father: "이내현",
     mother: "", // 미정 — 비어 있으면 혼주 줄에서 생략됨
     phone: "010-0000-0000",
-    tag: "#INFP",
-    photo: ph("groom", 400, 400),
   },
   bride: {
     name: "예지",
@@ -23,8 +21,6 @@ export const sample = {
     father: "故 조원걸",
     mother: "장경옥",
     phone: "010-0000-0000",
-    tag: "", // 미정 — 비어 있으면 표시 안 함
-    photo: ph("bride", 400, 400),
   },
   quote: {
     lines: ["장담하건대. 세상이 다 겨울이어도", "우리 사랑은 늘 봄처럼 따뜻하고", "간혹, 여름처럼 뜨거울 겁니다"],
@@ -39,11 +35,6 @@ export const sample = {
       ["오로지 믿음과 사랑을 약속하는 날,", "오셔서 축복해 주시면 큰 기쁨으로 간직하겠습니다."],
     ],
   },
-  timeline: [
-    { when: "21년 봄, 서울", title: "운명 같은 첫 만남", text: ["작은 카페에서", "우연이 운명이 된 날"], photo: ph("t1", 400, 400) },
-    { when: "어느새 1000일", title: "함께 보낸 나날들", text: ["서로의 하루가 되어", "당연해진 우리"], photo: ph("t2", 400, 400) },
-    { when: '대답은 "YES!"', title: "프로포즈", text: ["같은 마음으로", "같은 미래를 향한", "단 하나의 약속"], photo: ph("t3", 400, 400) },
-  ],
   gallery: Array.from({ length: 9 }, (_, i) => ph(`g${i}`, 800, 800)),
   venue: {
     name: "루이비스 문정",

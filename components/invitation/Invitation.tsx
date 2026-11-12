@@ -131,39 +131,6 @@ export function Invitation({ data }: { data: InvitationData }) {
         <Countdown target={data.date} names={[groom.name, bride.name]} />
       </section>
 
-      {/* Introduction */}
-      <section className="px-5 pb-20 pt-6">
-        <Head en="INTRODUCTION" ko="신랑 & 신부 소개" />
-        <div className="reveal grid grid-cols-[1fr_auto_1fr] items-start gap-3 text-center text-sm">
-          {[groom, bride].map((p, i) => (
-            <div key={p.name} className={i === 1 ? "order-3" : ""}>
-              <img src={p.photo} alt={p.name} className="aspect-square w-full rounded-full object-cover" />
-              <p className="mt-4 text-base font-bold">{p.name}</p>
-              {p.tag && <p className="mt-1 text-sub">{p.tag}</p>}
-            </div>
-          ))}
-          <span className="order-2 mt-[20%] text-heart">♥</span>
-        </div>
-      </section>
-
-      {/* Timeline */}
-      <section className="px-5 pb-20">
-        <Head en="OUR TIMELINE" ko="우리가 걸어온 그 길" />
-        <ol className="relative space-y-8 before:absolute before:inset-y-0 before:left-1/2 before:w-px before:bg-neutral-300">
-          {data.timeline.map((t, i) => (
-            <li key={t.title} className="reveal relative grid grid-cols-2 items-center gap-10">
-              <span className="absolute left-1/2 top-1/2 size-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-white bg-black" />
-              <img src={t.photo} alt="" className={`aspect-square w-full rounded-xl object-cover ${i % 2 ? "order-2" : ""}`} />
-              <div className={`text-sm ${i % 2 ? "text-right" : ""}`}>
-                <p className="text-xs text-sub">{t.when}</p>
-                <p className="mt-2 font-bold">{t.title}</p>
-                <Lines lines={t.text} className="mt-3 space-y-1 text-[13px]" />
-              </div>
-            </li>
-          ))}
-        </ol>
-      </section>
-
       {/* Gallery */}
       <section className="px-5 pb-20">
         <Head en="GALLERY" ko="우리가 함께 한 모든 순간" />
