@@ -46,8 +46,8 @@ export const sample = {
   ],
   gallery: Array.from({ length: 9 }, (_, i) => ph(`g${i}`, 800, 800)),
   venue: {
-    name: "라온 웨딩홀",
-    hall: "그랜드홀",
+    name: "루이비스 문정",
+    hall: "아모리스홀",
     address: "서울 강남구 테헤란로 123",
     tel: "02-000-0000",
     lat: 37.5006,
