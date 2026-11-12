@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: "Pretendard Variable", Pretendard, system-ui, sans-serif;
+  --font-display: var(--font-bodoni), "Times New Roman", serif;
+  --color-sub: #666464;
+  --color-panel: #f6f6f6;
+  --color-heart: #ff8599;
+}
+
+body {
+  background: #fff;
+  color: #000;
+  letter-spacing: -0.4px;
+}
+
+.btn {
+  display: block;
+  width: 65%;
+  margin-inline: auto;
+  padding-block: 0.8rem;
+  border-block: 1px solid #000;
+  background: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* 팝업(연락하기, 갤러리 확대)은 네이티브 popover — JS 없음 */
+[popover] {
+  margin: auto;
+  background: transparent;
+  max-width: min(92vw, 400px);
+}
+[popover]::backdrop {
+  background: rgb(0 0 0 / 0.6);
+}
+
+/* ponytail: 스크롤 fade-up은 CSS scroll-driven animation. 미지원 브라우저(구형 iOS, Firefox)는
+   애니메이션 없이 그냥 보임. 전 브라우저에서 필요해지면 IntersectionObserver로 교체. */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    translate: 0 40px;
+  }
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: fade-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 40%;
+    }
+  }
+}
