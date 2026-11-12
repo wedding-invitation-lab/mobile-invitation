@@ -80,7 +80,9 @@ export function Invitation({ data }: { data: InvitationData }) {
           <div className="reveal space-y-2 border-y border-neutral-200 py-4 text-sm tracking-[2px]">
             {[groom, bride].map((p) => (
               <p key={p.name}>
-                {p.father} · {p.mother} 의 {p.order} <b>{p.name}</b>
+                {[p.father, p.mother].filter(Boolean).join(" · ")}
+                {(p.father || p.mother) && " 의 "}
+                {p.order} <b>{p.name}</b>
               </p>
             ))}
           </div>
@@ -137,9 +139,7 @@ export function Invitation({ data }: { data: InvitationData }) {
             <div key={p.name} className={i === 1 ? "order-3" : ""}>
               <img src={p.photo} alt={p.name} className="aspect-square w-full rounded-full object-cover" />
               <p className="mt-4 text-base font-bold">{p.name}</p>
-              <p className="mt-1 text-sub">{p.tag}</p>
-              <p className="mt-3">{p.birth}</p>
-              <p className="mt-1">{p.job}</p>
+              {p.tag && <p className="mt-1 text-sub">{p.tag}</p>}
             </div>
           ))}
           <span className="order-2 mt-[20%] text-heart">♥</span>

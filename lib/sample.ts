@@ -2,38 +2,37 @@
 const ph = (seed: string, w = 800, h = 1000, gray = false) =>
   `https://picsum.photos/seed/${seed}/${w}/${h}${gray ? "?grayscale" : ""}`;
 
+// public/photos 안의 실제 사진. GitHub Pages의 하위 경로(basePath)를 자동으로 붙임.
+const photo = (name: string) => `${process.env.PAGES_BASE_PATH ?? ""}/photos/${name}`;
+
 export const sample = {
-  date: "2027-04-17T14:30:00+09:00",
-  cover: ph("cover", 860, 1200, true),
+  date: "2027-02-21T13:40:00+09:00",
+  cover: photo("cover.jpg"),
   groom: {
-    name: "민준",
+    name: "내현",
     order: "장남",
-    father: "김영호",
-    mother: "이정희",
+    father: "이승구",
+    mother: "", // 미정 — 비어 있으면 혼주 줄에서 생략됨
     phone: "010-0000-0000",
-    tag: "#ENFP",
-    birth: "1995년 서울 출생",
-    job: "소프트웨어 엔지니어",
+    tag: "#INFP",
     photo: ph("groom", 400, 400),
   },
   bride: {
-    name: "서연",
-    order: "장녀",
-    father: "박성민",
-    mother: "최은숙",
+    name: "예지",
+    order: "차녀",
+    father: "故 조원걸",
+    mother: "장경옥",
     phone: "010-0000-0000",
-    tag: "#INTJ",
-    birth: "1996년 부산 출생",
-    job: "그래픽 디자이너",
+    tag: "", // 미정 — 비어 있으면 표시 안 함
     photo: ph("bride", 400, 400),
   },
   quote: {
-    lines: ["서로를 바라보는 것이 아니라", "같은 방향을 함께 바라보는 것,", "그것이 사랑입니다"],
-    source: "생텍쥐페리",
-    photo: ph("quote", 600, 600, true),
+    lines: ["장담하건대. 세상이 다 겨울이어도", "우리 사랑은 늘 봄처럼 따뜻하고", "간혹, 여름처럼 뜨거울 겁니다"],
+    source: "이수동, <사랑가>",
+    photo: photo("quote.jpg"),
   },
   greeting: {
-    photo: ph("greeting", 860, 860, true),
+    photo: photo("greeting.jpg"),
     paragraphs: [
       ["서로의 이름을 부르는 것만으로도", "사랑의 깊이를 확인할 수 있는", "저희 두 사람이 결혼식을 올리게 되었습니다."],
       ["평생 서로를 귀하게 여기며", "첫 마음 그대로 존중하고 배려하며 살겠습니다."],
