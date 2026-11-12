@@ -217,15 +217,8 @@ export function Invitation({ data }: { data: InvitationData }) {
         </div>
       </section>
 
-      {/* Closing */}
+      {/* Share */}
       <section>
-        <div className="relative">
-          <img src={data.closing.photo} alt="" loading="lazy" className="aspect-[3/4] w-full object-cover brightness-75" />
-          <div className="absolute left-8 top-16 text-sm text-white">
-            <Lines lines={data.closing.lines} className="space-y-2" />
-            <p className="mt-6">- {data.closing.source} -</p>
-          </div>
-        </div>
         <div className="flex flex-col items-center gap-4 py-12 text-sm">
           <ShareButton title={`${groom.name} ♥ ${bride.name} 결혼합니다`} />
           <CopyButton label="링크 복사하기" />
