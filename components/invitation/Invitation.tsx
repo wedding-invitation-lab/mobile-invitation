@@ -118,7 +118,16 @@ export function Invitation({ data }: { data: InvitationData }) {
             </span>
           ))}
           {calendarCells(y, m).map((day, i) => (
-            <span key={i} className={day === d ? "mx-auto size-7 rounded-full bg-black leading-7 text-white" : "leading-7"}>
+            <span key={i} className={`relative isolate leading-7 ${day === d ? "font-bold text-white" : ""}`}>
+              {day === d && (
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden
+                  className="absolute left-1/2 top-1/2 -z-10 size-10 -translate-x-1/2 -translate-y-[46%] fill-black"
+                >
+                  <path d="M12 21.4C5.4 16.6 2 12.9 2 8.9 2 5.9 4.3 3.6 7.2 3.6c1.9 0 3.6 1 4.8 2.6 1.2-1.6 2.9-2.6 4.8-2.6 2.9 0 5.2 2.3 5.2 5.3 0 4-3.4 7.7-10 12.5z" />
+                </svg>
+              )}
               {day}
             </span>
           ))}
