@@ -39,10 +39,13 @@ export const sample = {
   venue: {
     name: "루이비스 문정",
     hall: "아모리스홀",
-    address: "서울 강남구 테헤란로 123",
+    address: "서울 송파구 법원로9길 26 H비즈니스파크 D동 루이비스컨벤션 B1층",
     tel: "02-000-0000",
-    lat: 37.5006,
-    lng: 127.0364,
+    maps: [
+      ["네이버 지도", "https://naver.me/Gctrli34"],
+      ["카카오맵", "https://place.map.kakao.com/1862136403"],
+      ["티맵", "https://tmap.life/b4c7a612"],
+    ],
     transit: [
       { title: "버스 이용시", lines: ["일반버스 : 11-1, 3, 58, 7", "간선버스 : 101, 206, 110, 120"] },
       { title: "지하철 이용시", lines: ["2호선 : 역삼역 3번 출구 (도보 5분)"] },

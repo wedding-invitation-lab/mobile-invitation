@@ -34,11 +34,6 @@ export function Invitation({ data }: { data: InvitationData }) {
     timeStyle: "short",
   }).format(new Date(data.date));
   const place = `${venue.name} ${venue.hall}`;
-  const maps = [
-    ["네이버 지도", `https://map.naver.com/p/search/${encodeURIComponent(venue.address)}`],
-    ["카카오맵", `https://map.kakao.com/link/to/${encodeURIComponent(venue.name)},${venue.lat},${venue.lng}`],
-    ["티맵", `tmap://route?goalname=${encodeURIComponent(venue.name)}&goalx=${venue.lng}&goaly=${venue.lat}`],
-  ];
 
   return (
     <main className="mx-auto w-full max-w-[430px] overflow-x-clip bg-white">
@@ -158,9 +153,9 @@ export function Invitation({ data }: { data: InvitationData }) {
             {venue.tel}
           </a>
         </div>
-        {/* ponytail: 지도 임베드 없음(키 필요). 길찾기 딥링크만. */}
+        {/* ponytail: 지도 임베드 없음(키 필요). 지도 앱 링크만. */}
         <div className="reveal mt-8 grid grid-cols-3 gap-2 text-sm">
-          {maps.map(([label, href]) => (
+          {venue.maps.map(([label, href]) => (
             <a key={label} href={href} target="_blank" rel="noreferrer" className="rounded-md bg-white py-3 text-center shadow-sm">
               {label}
             </a>
