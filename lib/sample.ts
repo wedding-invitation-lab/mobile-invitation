@@ -40,7 +40,7 @@ export const sample = {
     name: "루이비스 문정",
     hall: "아모리스홀",
     address: "서울 송파구 법원로9길 26 H비즈니스파크 D동 루이비스컨벤션 B1층",
-    tel: "02-000-0000",
+    tel: "02-6281-9000",
     maps: [
       ["네이버 지도", "https://naver.me/Gctrli34"],
       ["카카오맵", "https://place.map.kakao.com/1862136403"],
